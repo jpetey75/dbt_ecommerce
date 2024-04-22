@@ -1,31 +1,207 @@
-
 version: 2
-
 models:
-
   - name: orders
-    description: This table contains all information related to an order needed for the core reporting dashboards
-
+    description: >-
+      This table contains all information related to an order needed for the
+      core reporting dashboards
     columns:
       - name: order_id
         description: "{{ doc('order_id') }}"
-
+        meta:
+          dimension:
+            type: number
       - name: order_status
         description: The order status (Shipped, Complete, Returned, Cancelled, Processing)
-
+        meta:
+          dimension:
+            type: string
       - name: order_created_at
         description: Timestamp when the order was created
+        meta:
+          dimension:
+            type: timestamp
       - name: order_created_month
-        description: The first day of the month when the order was created 
-
+        description: The first day of the month when the order was created
+        meta:
+          dimension:
+            type: date
       - name: order_shipped_at
         description: Timestamp when the order was shipped
+        meta:
+          dimension:
+            type: timestamp
       - name: order_shipped_month
         description: The first day of the month when the order was shipped
-
+        meta:
+          dimension:
+            type: date
+      - name: user_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: order_total
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: order_total_mens
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: order_total_womens
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: user_age
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: user_email
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: user_traffic_source
+        description: ""
+        meta:
+          dimension:
+            type: string
   - name: int_order_items_by_order
+    columns:
+      - name: order_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: order_total
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: order_total_mens
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: order_total_womens
+        description: ""
+        meta:
+          dimension:
+            type: number
   - name: stg_ecommerce__orders
+    columns:
+      - name: order_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: user_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: order_status
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: num_order_items
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: order_created_at
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: order_shipped_at
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: order_created_month
+        description: ""
+        meta:
+          dimension:
+            type: date
+      - name: order_shipped_month
+        description: ""
+        meta:
+          dimension:
+            type: date
   - name: stg_ecommerce__order_items
+    columns:
+      - name: order_item_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: order_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: product_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: order_item_sale_price
+        description: ""
+        meta:
+          dimension:
+            type: number
   - name: stg_ecommerce__products
+    columns:
+      - name: product_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: product_department
+        description: ""
+        meta:
+          dimension:
+            type: string
   - name: stg_ecommerce__users
-  
+    columns:
+      - name: user_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: user_age
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: user_email
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: user_country
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: user_traffic_source
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: user_created_at
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: user_created_month
+        description: ""
+        meta:
+          dimension:
+            type: date

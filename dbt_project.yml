@@ -2,7 +2,7 @@ name: 'dbt_bigquery_ecommerce'
 version: '1.5.0'
 config-version: 2
 
-profile: 'default'
+profile: 'bigquery_demo_db'
 
 model-paths: ["models"]
 test-paths: ["tests"]

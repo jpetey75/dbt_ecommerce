@@ -1,3 +1,3 @@
-## dbt BigQuery eCommerce example project 
+## dbt ecommerce example project 
 
-This is an example project that uses an [ecommerce demo data set](https://console.cloud.google.com/marketplace/product/bigquery-public-data/thelook-ecommerce) from BigQuery. The purpose of this project is to show a simple dbt project that follows best practices. 
+This example dbt project uses [an ecommerce demo data set](https://console.cloud.google.com/marketplace/product/bigquery-public-data/thelook-ecommerce) from BigQuery. It will be used to show best practice for using dbt concepts like sources, models, dimensions, and measures.

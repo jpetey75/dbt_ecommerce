@@ -1,0 +1,5 @@
+version: 2
+models:
+
+  - name: int_order_items_by_order
+    description: Intermediate model that groups order items by order to sum up the order totals

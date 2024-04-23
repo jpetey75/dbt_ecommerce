@@ -10,6 +10,9 @@ models:
         meta:
           dimension:
             type: number
+          metrics:
+            unique_orders:
+              type: count_distinct  
       - name: order_status
         description: The order status (Shipped, Complete, Returned, Cancelled, Processing)
         meta:
@@ -40,11 +43,21 @@ models:
         meta:
           dimension:
             type: number
+          metrics:
+            unique_users:
+              type: count_distinct  
       - name: order_total
         description: ""
         meta:
           dimension:
             type: number
+          metrics:
+            sum_order_total:
+              type: sum
+              format: 'usd'
+            avg_order_total:
+              type: average
+              format: 'usd'
       - name: order_total_mens
         description: ""
         meta:
@@ -70,6 +83,7 @@ models:
         meta:
           dimension:
             type: string
+
   - name: int_order_items_by_order
     columns:
       - name: order_id

@@ -4,7 +4,6 @@ models:
     description: >-
       This table contains all information related to an order needed for the
       core reporting dashboards
-
     columns:
       - name: order_id
         description: Primary key and unique identifier for orders
@@ -13,38 +12,32 @@ models:
             type: number
           metrics:
             unique_orders:
-              type: count_distinct  
-
+              type: count_distinct
       - name: order_status
         description: The order status (Shipped, Complete, Returned, Cancelled, Processing)
         meta:
           dimension:
             type: string
-
       - name: order_created_at
         description: Timestamp when the order was created
         meta:
           dimension:
             type: timestamp
-
       - name: order_created_month
         description: The first day of the month when the order was created
         meta:
           dimension:
             type: date
-
       - name: order_shipped_at
         description: Timestamp when the order was shipped
         meta:
           dimension:
             type: timestamp
-
       - name: order_shipped_month
         description: The first day of the month when the order was shipped
         meta:
           dimension:
             type: date
-
       - name: order_total
         description: ""
         meta:
@@ -53,11 +46,10 @@ models:
           metrics:
             sum_order_total:
               type: sum
-              format: 'usd'
+              format: usd
             avg_order_total:
               type: average
-              format: 'usd'
-
+              format: usd
       - name: order_total_mens
         description: ""
         meta:
@@ -66,11 +58,10 @@ models:
           metrics:
             sum_order_total_mens:
               type: sum
-              format: 'usd'
+              format: usd
             avg_order_total_mens:
               type: average
-              format: 'usd'
-
+              format: usd
       - name: order_total_womens
         description: ""
         meta:
@@ -79,11 +70,10 @@ models:
           metrics:
             sum_order_total_womens:
               type: sum
-              format: 'usd'
+              format: usd
             avg_order_total_womens:
               type: average
-              format: 'usd'
-
+              format: usd
       - name: user_id
         description: ""
         meta:
@@ -91,23 +81,19 @@ models:
             type: number
           metrics:
             unique_users:
-              type: count_distinct  
-
+              type: count_distinct
       - name: user_age
         description: ""
         meta:
           dimension:
             type: number
-
       - name: user_email
         description: ""
         meta:
           dimension:
             type: string
-
       - name: user_traffic_source
         description: ""
         meta:
           dimension:
             type: string
-

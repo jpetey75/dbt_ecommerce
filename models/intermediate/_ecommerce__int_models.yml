@@ -1,5 +1,27 @@
 version: 2
 models:
-
   - name: int_order_items_by_order
-    description: Intermediate model that groups order items by order to sum up the order totals
+    description: >-
+      Intermediate model that groups order items by order to sum up the order
+      totals
+    columns:
+      - name: order_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: order_total
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: order_total_mens
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: order_total_womens
+        description: ""
+        meta:
+          dimension:
+            type: number

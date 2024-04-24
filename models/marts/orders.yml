@@ -4,19 +4,21 @@ models:
     description: >-
       This table contains all information related to an order needed for the
       core reporting dashboards
-    
+
     config:
       tags: ['lightdash']
 
     columns:
 
       - name: order_id
+        label: "Order ID"
         description: Primary key and unique identifier for orders
         meta:
           dimension:
             type: number
 
       - name: user_id
+        label: "User ID"
         description: "User ID from the production database."
         meta:
           dimension:

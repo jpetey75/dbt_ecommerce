@@ -4,6 +4,9 @@ models:
     description: >-
       This table contains all information related to an order needed for the
       core reporting dashboards
+    
+    config:
+      tags: ['lightdash']
 
     columns:
 

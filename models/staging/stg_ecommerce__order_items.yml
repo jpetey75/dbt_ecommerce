@@ -1,0 +1,25 @@
+version: 2
+models:
+  - name: stg_ecommerce__order_items
+    description: This is the raw order_items table copied from the production database
+    columns:
+      - name: order_item_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: order_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: product_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: order_item_sale_price
+        description: ""
+        meta:
+          dimension:
+            type: number

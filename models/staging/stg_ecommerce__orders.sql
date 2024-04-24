@@ -10,10 +10,6 @@ select
 
 	--order timestamps in US central time
 	{{ ntz_to_reporting_tz('created_at') }}  as order_created_at,
-	{{ ntz_to_reporting_tz('shipped_at') }}  as order_shipped_at,
-
-	--order dates in US central time
-	{{ ntz_to_reporting_tz_month('created_at') }}  as order_created_month,
-	{{ ntz_to_reporting_tz_month('shipped_at') }}  as order_shipped_month
+	{{ ntz_to_reporting_tz('shipped_at') }}  as order_shipped_at
 
 from {{ source('ecommerce','orders') }}

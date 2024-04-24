@@ -13,9 +13,7 @@ select
 
     --order timestamps and months
     o.order_created_at,
-    o.order_created_month,
     o.order_shipped_at,
-    o.order_shipped_month,
 
     --order item details 
     oi.order_total, 

@@ -1,0 +1,35 @@
+version: 2
+models:
+  - name: stg_ecommerce__orders
+    description: This is the raw orders table copied from the production database
+    columns:
+      - name: order_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: user_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: order_status
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: num_order_items
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: order_created_at
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: order_shipped_at
+        description: ""
+        meta:
+          dimension:
+            type: timestamp

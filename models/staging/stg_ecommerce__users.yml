@@ -1,0 +1,40 @@
+version: 2
+models:
+  - name: stg_ecommerce__users
+    description: This is the raw users table copied from the production database
+    columns:
+      - name: user_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: user_age
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: user_email
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: user_country
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: user_traffic_source
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: user_created_at
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: user_created_month
+        description: ""
+        meta:
+          dimension:
+            type: date

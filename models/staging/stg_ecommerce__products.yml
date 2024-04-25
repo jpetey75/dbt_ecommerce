@@ -1,6 +1,5 @@
 version: 2
 models:
-
   - name: stg_ecommerce__products
     description: This is the raw products table copied from the production database
     columns:

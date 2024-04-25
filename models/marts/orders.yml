@@ -4,10 +4,9 @@ models:
     description: >-
       This table contains all information related to an order needed for the
       core reporting dashboards
-
     config:
-      tags: ['lightdash']
-
+      tags:
+        - lightdash
     meta:
       metrics:
         avg_revenue_per_customer:
@@ -15,9 +14,7 @@ models:
           label: Average Revenue per Customer (GBP)
           format: gbp
           sql: ${sum_order_total} / ${unique_customers}
-
     columns:
-
       - name: user_id
         description: User ID from the production database.
         meta:
@@ -26,7 +23,6 @@ models:
           metrics:
             unique_customers:
               type: count_distinct
-
       - name: order_total
         description: Order total in GBP
         meta:
@@ -45,57 +41,48 @@ models:
               group_label: Order Totals
               format: gbp
               round: 0
-
       - name: order_id
         description: Primary key and unique identifier for orders
         meta:
           dimension:
             type: number
-
       - name: order_total_mens
-        description: "Order total from the Mens department"
+        description: Order total from the Mens department
         meta:
           dimension:
             type: number
-
       - name: order_total_womens
-        description: "Order total from the Womens department"
+        description: Order total from the Womens department
         meta:
           dimension:
             type: number
-
       - name: order_created_at
         description: Timestamp when the order was created
         meta:
           dimension:
             type: timestamp
-
       - name: order_shipped_at
         description: Timestamp when the order was shipped
         meta:
           dimension:
             type: timestamp
-
       - name: order_status
         description: The order status (Shipped, Complete, Returned, Cancelled, Processing)
         meta:
           dimension:
             type: string
-
       - name: user_age
-        description: "Age of the user based on their user profile"
+        description: Age of the user based on their user profile
         meta:
           dimension:
             type: number
-
       - name: user_email
-        description: "Email the user provided at checkout"
+        description: Email the user provided at checkout
         meta:
           dimension:
             type: string
-
       - name: user_traffic_source
-        description: "Traffic source of the order session (last touch)"
+        description: Traffic source of the order session (last touch)
         meta:
           dimension:
             type: string

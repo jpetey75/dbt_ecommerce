@@ -8,24 +8,46 @@ models:
     config:
       tags: ['lightdash']
 
+    meta:
+      metrics:
+        avg_revenue_per_customer:
+          type: number
+          label: Average Revenue per Customer (GBP)
+          format: gbp
+          sql: ${sum_order_total} / ${unique_customers}
+
     columns:
 
-      - name: order_id
-        label: "Order ID"
-        description: Primary key and unique identifier for orders
-        meta:
-          dimension:
-            type: number
-
       - name: user_id
-        label: "User ID"
-        description: "User ID from the production database."
+        description: User ID from the production database.
         meta:
           dimension:
             type: number
+          metrics:
+            unique_customers:
+              type: count_distinct
 
       - name: order_total
-        description: "Order total in GBP"
+        description: Order total in GBP
+        meta:
+          dimension:
+            type: number
+          metrics:
+            sum_order_total:
+              type: sum
+              label: Sum Order Total (GBP)
+              group_label: Order Totals
+              format: gbp
+              round: 0
+            avg_order_total:
+              type: average
+              label: Average Order Total (GBP)
+              group_label: Order Totals
+              format: gbp
+              round: 0
+
+      - name: order_id
+        description: Primary key and unique identifier for orders
         meta:
           dimension:
             type: number

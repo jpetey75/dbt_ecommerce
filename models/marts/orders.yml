@@ -4,68 +4,65 @@ models:
     description: >-
       This table contains all information related to an order needed for the
       core reporting dashboards
-    
+
     config:
       tags: ['lightdash']
 
+    meta:
+      metrics:
+        avg_revenue_per_customer:
+          type: number
+          label: Average Revenue per Customer (GBP)
+          format: gbp
+          sql: ${sum_order_total} / ${unique_customers}
+
     columns:
 
-      - name: order_id
-        description: Primary key and unique identifier for orders
+      - name: user_id
+        description: User ID from the production database.
         meta:
           dimension:
             type: number
           metrics:
-            unique_orders:
+            unique_customers:
               type: count_distinct
 
       - name: order_total
-        description: "Order total"
+        description: Order total in GBP
         meta:
           dimension:
             type: number
           metrics:
             sum_order_total:
               type: sum
-              format: usd
+              label: Sum Order Total (GBP)
+              group_label: Order Totals
+              format: gbp
+              round: 0
             avg_order_total:
               type: average
-              format: usd
+              label: Average Order Total (GBP)
+              group_label: Order Totals
+              format: gbp
+              round: 0
+
+      - name: order_id
+        description: Primary key and unique identifier for orders
+        meta:
+          dimension:
+            type: number
 
       - name: order_total_mens
         description: "Order total from the Mens department"
         meta:
           dimension:
             type: number
-          metrics:
-            sum_order_total_mens:
-              type: sum
-              format: usd
-            avg_order_total_mens:
-              type: average
-              format: usd
 
       - name: order_total_womens
         description: "Order total from the Womens department"
         meta:
           dimension:
             type: number
-          metrics:
-            sum_order_total_womens:
-              type: sum
-              format: usd
-            avg_order_total_womens:
-              type: average
-              format: usd
-
-      - name: user_id
-        description: "User ID from the production database."
-        meta:
-          dimension:
-            type: number
-          metrics:
-            unique_users:
-              type: count_distinct
 
       - name: order_created_at
         description: Timestamp when the order was created

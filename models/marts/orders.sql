@@ -24,6 +24,7 @@ select
     u.user_id,
     u.user_age, 
     u.user_email, 
+    u.user_postal_code,
     u.user_traffic_source
 
 from {{ ref('stg_ecommerce__orders') }} as o 

@@ -86,3 +86,8 @@ models:
         meta:
           dimension:
             type: string
+      - name: user_postal_code
+        description: Postal code set in the user profile
+        meta:
+          dimension:
+            type: string

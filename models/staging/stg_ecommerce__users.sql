@@ -8,6 +8,7 @@ select
     age as user_age,
     email as user_email,
     country as user_country,
+    postal_code as user_postal_code,
     traffic_source as user_traffic_source,
 
     --date and time fields
